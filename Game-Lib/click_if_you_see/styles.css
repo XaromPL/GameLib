@@ -1,0 +1,103 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #1e1e2f, #2c2c44);
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+
+#game-container {
+    margin: 50px auto;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+#header-container {
+    margin-bottom: 20px;
+}
+
+#instructions {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 kolumn w siatce */
+    gap: 15px;
+    justify-content: center;
+}
+
+.square {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: linear-gradient(145deg, #3e3e5e, #29293f); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Zapewnienie stałej pozycji w siatce, nawet po usunięciu elementu */
+    visibility: visible;
+    position: relative;
+}
+
+.square:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Gradient Colors for Squares */
+.square[data-color='red'] {
+    background: linear-gradient(145deg, #ff6b6b, #d64545);
+}
+
+.square[data-color='blue'] {
+    background: linear-gradient(145deg, #4a90e2, #2a5ba8);
+}
+
+.square[data-color='green'] {
+    background: linear-gradient(145deg, #55efc4, #27ae60);
+}
+
+.square[data-color='yellow'] {
+    background: linear-gradient(145deg, #f1c40f, #e67e22);
+}
+
+.square[data-color='purple'] {
+    background: linear-gradient(145deg, #9b59b6, #6e3b87);
+}
+
+#result {
+    font-size: 1.5rem;
+    color: #00e676;
+    margin-top: 20px;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particle-animation 1s ease-out forwards;
+}
+
+@keyframes particle-animation {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(0.5);
+        opacity: 0;
+    }
+}

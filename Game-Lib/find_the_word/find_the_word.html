@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Word</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1>Find the Word</h1>
+    <p>Click on the letters in the correct order to form the word!</p>
+
+    <div id="game-area">
+        <div id="letter-board"></div>
+        <p id="score">Score: 0</p>
+    </div>
+
+    <div id="game-over" style="display:none;">
+        <p>Game Over!</p>
+        <p>Your final score is: <span id="final-score">0</span></p>
+    </div>
+
+    <!-- Buttons visible all the time -->
+    <div class="game_buttons">
+        <a href="find_the_word.html" class="btn">Play Again</a>
+        <a href="/index.html" class="btn">Back to Menu</a>
+    </div>
+
+    <script src="find_the_word.js"></script>
+</body>
+</html>
